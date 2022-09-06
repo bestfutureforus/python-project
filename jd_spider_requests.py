@@ -225,7 +225,7 @@ class JdSeckill(object):
         :return: 初始化信息组成的dict
         """
         logger.info('获取秒杀初始化信息...')
-        url = 'https://marathon.jd.com/seckillnew/orderService/pc/init.action'
+        url = 'https://marathon.jd.com/seckillnew/orderService/init.action'
         data = {
             'sku': self.sku_id,
             'num': self.seckill_num,
@@ -242,7 +242,7 @@ class JdSeckill(object):
             'Cookie': '__jdu=1662177463554221205683; o2State={%22webp%22:true%2C%22avif%22:true}; areaId=1; PCSYCityID=CN_110000_110100_0; shshshfpa=06531507-0b31-abab-a660-0becc8977463-1662285817; shshshfpb=s8YdvfMYKRZT_9LERv2X1fQ; user-key=887ed46f-e52d-4f76-a4f0-2d7ef5cc872d; pinId=rAnu0Cpjt5L6E1U9ceEJpQ; pin=523%E7%8E%8B%E5%88%9A; unick=u_s91w6nikweor; _tp=nOVpscyCes3%2BNp1X39xKAjFzMt2YX9emVILvj%2FeRV3w%3D; _pst=523%E7%8E%8B%E5%88%9A; ipLoc-djd=1-2901-55565-0.4553344744; ipLocation=%u5317%u4eac; cn=99; unpl=JF8EAMZnNSttWEpQVhpXSRIST19RWw9aGB9WPWJXXAkIQwZVGQIYEkd7XlVdXhRKHx9uYBRUXVNJUw4bBSsSEXteXVdZDEsWC2tXVgQFDQ8VXURJQlZAFDNVCV9dSRZRZjJWBFtdT1xWSAYYRRMfDlAKDlhCR1FpMjVkXlh7VAQrAhwVE0tbUltaCk8TBmxkBVdcXExdBysyHCIge1pXV1gPQicCX2Y1FgkETFYCGQRWEhdMXlRYWw1MFQdrYgZXXVtKUAISACsTIEg; TrackID=1J_ySx6oCs879Cd-PMVmqdWP5n0inMmDa0gUQljE4gXXLMSWc73NVSgNIMtPLf_jQ5JC_UXtqYdVuZ7wOX4p5df1M75zPIUvuyP3-6Csulep_PucmXYRI6uFJ2_sIhI0J; thor=FFA6225138091B52706D8499703FC64A40B921622879BBBE4E2111180C6250DB0BED47E13B701CD80C31BFC2F282B0A1ED6046EB9D358702CE8B82CC1DD55B1006D68578DD2A38E0EA2595116C3CBEF28BB3AD8E63EBFBBEF2DCDF22082AA1A99B3CA17FA55FE21AA29CF5F842E2878F54A77ACE893C42E0DA45E8EF2C0C7E45; ceshi3.com=201; __jda=76161171.1662177463554221205683.1662177464.1662350030.1662435377.6; __jdb=76161171.6.1662177463554221205683|6.1662435377; __jdc=76161171; __jdv=76161171|baidu-pinzhuan|t_288551095_baidupinzhuan|cpc|0f3d30c8dba7459bb52f2eb5eba8ac7d_0_105b0dc135344ccb9dc4c9ea9ca3121f|1662435413544; shshshfp=156abca454c1a26eb7f6ed460819db2b; shshshsID=0365b0368c377996eaa245a3b597b565_3_1662435414571; 3AB9D23F7A4B3C9B=HLFOECNF2JMWL5D3TUDIB5CFXDAVLCC53LDU3BGGLOATDYWDTDEP6XQ64URVUP6W4CUAOQIM4Y7SNV5MN2Y4HPAM34',
             'sec-ch-ua': 'Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104',
             'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': 'macOS',
+            # 'sec-ch-ua-platform': 'macOS',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
             'Sec-Fetch-User': '?1',
@@ -253,7 +253,7 @@ class JdSeckill(object):
             'Accept-Language': 'zh-TW,zh;q=0.9,zh-CN;q=0.8',
             'Cache-Control': 'max-age=0',
             'Sec-Fetch-Site': 'none',
-            'Referer': 'https://marathon.jd.com/seckill/seckill.action?skuId={0}&num={1}&rid={2}'.format(
+            'Referer': 'https://marathon.jd.com/seckillM/seckill.action?skuId={0}&num={1}&rid={2}'.format(
                 self.sku_id, self.seckill_num, int(time.time())),
             'Content-Type': 'application/x-www-form-urlencoded',
             'Origin': 'https://marathon.jd.com'
