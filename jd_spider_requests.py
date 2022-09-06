@@ -224,7 +224,7 @@ class JdSeckill(object):
         """获取秒杀初始化信息（包括：地址，发票，token）
         :return: 初始化信息组成的dict
         """
-        logger.info('获取秒杀初始化信息...')
+        logger.info('获取秒杀初始化信息...1')
         url = 'https://marathon.jd.com/seckillnew/orderService/init.action'
         data = {
             'sku': self.sku_id,
