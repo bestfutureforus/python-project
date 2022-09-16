@@ -65,7 +65,6 @@ class JdSeckill(object):
         self.login()
         while True:
             try:
-                self._get_seckill_init_info()
                 self.request_seckill_url()
                 self.request_seckill_checkout_page()
                 self.submit_seckill_order()
@@ -239,7 +238,7 @@ class JdSeckill(object):
         headers = {
             'User-Agent': get_random_useragent(),
             'Host': 'marathon.jd.com',
-            'Cookie': '__jdu=1662177463554221205683; o2State={%22webp%22:true%2C%22avif%22:true}; areaId=1; PCSYCityID=CN_110000_110100_0; shshshfpa=06531507-0b31-abab-a660-0becc8977463-1662285817; shshshfpb=s8YdvfMYKRZT_9LERv2X1fQ; user-key=887ed46f-e52d-4f76-a4f0-2d7ef5cc872d; pinId=rAnu0Cpjt5L6E1U9ceEJpQ; pin=523%E7%8E%8B%E5%88%9A; unick=u_s91w6nikweor; _tp=nOVpscyCes3%2BNp1X39xKAjFzMt2YX9emVILvj%2FeRV3w%3D; _pst=523%E7%8E%8B%E5%88%9A; ipLoc-djd=1-2901-55565-0.4553344744; ipLocation=%u5317%u4eac; cn=99; unpl=JF8EAMZnNSttWEpQVhpXSRIST19RWw9aGB9WPWJXXAkIQwZVGQIYEkd7XlVdXhRKHx9uYBRUXVNJUw4bBSsSEXteXVdZDEsWC2tXVgQFDQ8VXURJQlZAFDNVCV9dSRZRZjJWBFtdT1xWSAYYRRMfDlAKDlhCR1FpMjVkXlh7VAQrAhwVE0tbUltaCk8TBmxkBVdcXExdBysyHCIge1pXV1gPQicCX2Y1FgkETFYCGQRWEhdMXlRYWw1MFQdrYgZXXVtKUAISACsTIEg; TrackID=1J_ySx6oCs879Cd-PMVmqdWP5n0inMmDa0gUQljE4gXXLMSWc73NVSgNIMtPLf_jQ5JC_UXtqYdVuZ7wOX4p5df1M75zPIUvuyP3-6Csulep_PucmXYRI6uFJ2_sIhI0J; thor=FFA6225138091B52706D8499703FC64A40B921622879BBBE4E2111180C6250DB0BED47E13B701CD80C31BFC2F282B0A1ED6046EB9D358702CE8B82CC1DD55B1006D68578DD2A38E0EA2595116C3CBEF28BB3AD8E63EBFBBEF2DCDF22082AA1A99B3CA17FA55FE21AA29CF5F842E2878F54A77ACE893C42E0DA45E8EF2C0C7E45; ceshi3.com=201; __jda=76161171.1662177463554221205683.1662177464.1662350030.1662435377.6; __jdb=76161171.6.1662177463554221205683|6.1662435377; __jdc=76161171; __jdv=76161171|baidu-pinzhuan|t_288551095_baidupinzhuan|cpc|0f3d30c8dba7459bb52f2eb5eba8ac7d_0_105b0dc135344ccb9dc4c9ea9ca3121f|1662435413544; shshshfp=156abca454c1a26eb7f6ed460819db2b; shshshsID=0365b0368c377996eaa245a3b597b565_3_1662435414571; 3AB9D23F7A4B3C9B=HLFOECNF2JMWL5D3TUDIB5CFXDAVLCC53LDU3BGGLOATDYWDTDEP6XQ64URVUP6W4CUAOQIM4Y7SNV5MN2Y4HPAM34',
+            'Cookie': 'shshshfpa=a9ddc8a5-81e1-c01a-449d-d1092b7c8194-1637723122; shshshfpb=j1ruWzQtq3DjhNak5h7zz3A%3D%3D; __jdu=16599281313162050207785; areaId=1; ipLoc-djd=1-2802-0-0; pinId=rAnu0Cpjt5L6E1U9ceEJpQ; pin=523%E7%8E%8B%E5%88%9A; unick=u_s91w6nikweor; _tp=nOVpscyCes3%2BNp1X39xKAjFzMt2YX9emVILvj%2FeRV3w%3D; _pst=523%E7%8E%8B%E5%88%9A; user-key=61804443-7386-4a5d-9bb9-77ad05ce4845; unpl=JF8EAMlnNSttD0hRVxkBSBBASF9UW1kLSx5WODNQVVxQGFwNTgRIRkV7XlVdXhRKHx9vYBRUXFNPVw4bACsSEXteXVdZDEsWC2tXVgQFDQ8VXURJQlZAFDNVCV9dSRZRZjJWBFtdT1xWSAYYRRMfDlAKDlhCR1FpMjVkXlh7VAQrAhwWGENeXV5fCEkXBGxmAVVeWU1SDB8yKxUge21SWV4NShUzblcEZB8MF1QEGwAdGl1LWlBWVQtCFwFvZQVTXllPVQYaBB0bFHtcZF0; PCSYCityID=CN_110000_110100_0; TrackID=1Ie27V-HA2L3ZUhcBhwdBCaQ5R2bLuurNp_3tzduNbQWEsW2Soj19esmFwpQWUbCdxpEMjMG9T1POSAKxADkbnfQxvmelc8i-x0I2fJSAIZ0vl8tXkSAcb02ciLlaNqJG; ceshi3.com=201; __jdc=76161171; __jda=76161171.16599281313162050207785.1659928131.1663296734.1663300295.9; __jdb=76161171.1.16599281313162050207785|9.1663300295; __jdv=76161171|baidu-pinzhuan|t_288551095_baidupinzhuan|cpc|0f3d30c8dba7459bb52f2eb5eba8ac7d_0_f24c32b3a23145218dfed009b99d7bed|1663300294541; thor=FFA6225138091B52706D8499703FC64A6191AF401AACDB5BEAC7986A03DD5C61DCC9DB334BD62876632FF98E0D4CCE37B779B8BE6688703AAE945EE0E20A14A770C00759036541B48D18F34E6665C8A7C03DB2BBBA3B6EE59025496680F53F378DCD61FC07F3CAC17032D24D9FFE3F1D49F6CD95B50E0C6E8AEAF504E86DF336; shshshfp=c865ab626706de10e188df63fac4e964; shshshsID=0a2f0f0a392576adf0d42aa779f42fe3_1_1663300295635; 3AB9D23F7A4B3C9B=77724GPN476XAGK7BNSQEVIKTWPLKEETH34HTOQCWNTQ574AXIVJPVBLBMK7H2PUC6G57VUFLTR3PEVL4YGJ3PMFNM',
             'sec-ch-ua': 'Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104',
             'sec-ch-ua-mobile': '?0',
             # 'sec-ch-ua-platform': 'macOS',
@@ -269,8 +268,6 @@ class JdSeckill(object):
         # 获取用户秒杀初始化信息
         self.seckill_init_info[self.sku_id] = self._get_seckill_init_info()
         init_info = self.seckill_init_info.get(self.sku_id)
-        default_address = init_info['address'][0]  # 默认地址dict
-        invoice_info = init_info.get('invoiceInfo', {})  # 默认发票信息dict, 有可能不返回
         # token = init_info['token']
         token = '6576c6aa7f5d7973f1f2da36bed2fb4e'
         data = {
@@ -287,7 +284,7 @@ class JdSeckill(object):
             'addressDetail': '天通苑西一区5号楼1单元快递柜',
             'mobile': '184****1665',
             'mobileKey': '5cfbf6d3c2fe937b18ea74b0130f37e4',
-            'email': default_address.get('email', ''),
+            'email': '',
             'postCode': '',
             'invoiceTitle': 4,
             'invoiceCompanyName': '',
@@ -296,7 +293,7 @@ class JdSeckill(object):
             'invoiceEmail': '',
             'invoicePhone': '184****1665',
             'invoicePhoneKey': '5cfbf6d3c2fe937b18ea74b0130f37e4',
-            'invoice': 'true' if invoice_info else 'false',
+            'invoice': 'false',
             'password': '',
             'codTimeType': 3,
             'paymentType': 4,
@@ -311,14 +308,14 @@ class JdSeckill(object):
         return data
 
     def submit_seckill_order(self):
-        url = 'https://marathon.jd.com/seckillnew/orderService/pc/submitOrder.action'
+        url = 'https://marathon.jd.com/seckillnew/orderService/submitOrder.action'
         payload = {
             'skuId': self.sku_id,
         }
         self.seckill_order_data[self.sku_id] = self._get_seckill_order_data()
         logger.info('提交抢购订单...')
         headers = {
-            'User-Agent': self.default_user_agent,
+            'User-Agent': get_random_useragent(),
             'Host': 'marathon.jd.com',
             'Referer': 'https://marathon.jd.com/seckillM/seckill.action?skuId={0}&num={1}&rid={2}'.format(
                 self.sku_id, self.seckill_num, int(time.time())),
